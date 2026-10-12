@@ -20,7 +20,7 @@ jobs:
       contents: read
       issues: read
       pull-requests: read
-      id-token: none
+      id-token: write
     outputs:
       access_outcome: ${{ steps.access.outcome }}
       skip: ${{ steps.access.outputs.skip }}
@@ -67,7 +67,7 @@ jobs:
           steps.access.outputs.skip != 'true' &&
           steps.access.outputs.bypass != 'true'
         continue-on-error: true
-        uses: pullfrog/pullfrog@c4d0ca6f15d12382ddd20d2010bc596b405f42f0 # v0.1.60
+        uses: pullfrog/pullfrog@99c5e781dd54463197d1109998386d37c84f6853 # v0.1.84
         with:
           prompt: ${{ steps.request.outputs.prompt }}
           timeout: 15m
